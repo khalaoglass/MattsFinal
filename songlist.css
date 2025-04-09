@@ -41,32 +41,32 @@
     filter: brightness(1.2) drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
 }
   
-  /* SoundCloud List Styling */
   .soundcloud-stack {
-    list-style-position: inside;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    padding: 0 20px;
-    margin: 40px auto;
-    max-width: 100%;
-  }
-  
-  .soundcloud-stack li {
-    width: 120%;
-    max-width: 500px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .soundcloud-stack iframe {
-    width: 100%;
-    border: none;
-    height: 120px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px;
+  margin: 40px auto;
+  max-width: 100%;
+}
+
+.soundcloud-stack li {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.soundcloud-stack iframe {
+  width: 100%;
+  height: 300px; /* Updated to match new embed size */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
   
   /* Responsive Behavior */
   @media (max-width: 768px) {
