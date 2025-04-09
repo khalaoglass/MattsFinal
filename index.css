@@ -46,7 +46,7 @@
     width: 240px;
     height: auto;
     transition: transform 0.3s ease, filter 0.3s ease;
-    border-bottom: 2px solid black;
+   
 }
 
 .watermark-img:hover {
