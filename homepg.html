@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ray Cruse</title>
+    <link rel="stylesheet" href="homepg.css" />
+</head>
+<body>
+    <video id="intro-video" autoplay muted loop playsinline>
+        <source src="Sequence 01.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header class="header">
+        <div class="brand">
+            <h1 id="typing-text"></h1>
+            <img id="intro-img" src="rtext3.png" alt="Intro Image" />
+        </div>
+
+        <div class="right-stack">
+            <div class="watermark">
+                <a href="folderpg.html">
+                    <img src="mens5.png" alt="ME & SUICIDE" class="watermark-img" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+    </main>
+
+    <div id="image-modal" class="modal" style="display:none;">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="expanded-img">
+        <div id="img-caption"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const introImg = document.getElementById("intro-img");
+            if (introImg) introImg.style.display = "block";
+
+            const images = document.querySelectorAll('.main-content img');
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('expanded-img');
+            const captionText = document.getElementById('img-caption');
+            const closeBtn = document.querySelector('.modal-close');
+
+            images.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.style.display = 'block';
+                    modalImg.src = img.src;
+                    captionText.textContent = img.alt;
+                });
+            });
+
+            closeBtn?.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', event => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

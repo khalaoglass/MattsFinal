@@ -1,0 +1,108 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1s ease-in;
+}
+  /* Watermark (Top Left) */
+.watermark {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: fadeIn 1s ease-in 0.3s backwards;
+}
+.watermark-img {
+    width: 240px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: fadeIn 1s ease-in 0.5s backwards;
+}
+
+.watermark-img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2) drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
+}
+  
+  /* SoundCloud List Styling */
+  .soundcloud-stack {
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 0 20px;
+    margin: 40px auto;
+    max-width: 100%;
+  }
+  
+  .soundcloud-stack li {
+    width: 120%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .soundcloud-stack iframe {
+    width: 100%;
+    border: none;
+    height: 120px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Responsive Behavior */
+  @media (max-width: 768px) {
+    .soundcloud-stack {
+      padding: 0 10px;
+      gap: 50px;
+    }
+  
+    .soundcloud-stack iframe {
+      height: 100px;
+    }
+  
+    .watermark {
+        padding: 5px;
+    }
+
+    .watermark-img {
+        width: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .soundcloud-stack {
+      padding: 0 5px;
+      gap: 60px;
+    }
+  
+    .soundcloud-stack iframe {
+      height: 90px;
+    }
+  
+    .watermark {
+        padding: 3px;
+    }
+
+    .watermark-img {
+        width: 140px;
+    }
+  }
