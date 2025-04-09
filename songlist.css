@@ -1,108 +1,104 @@
 /* Reset Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: Arial, sans-serif;
-    animation: fadeIn 1s ease-in;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  /* Watermark (Top Left) */
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Watermark */
 .watermark {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    animation: fadeIn 1s ease-in 0.3s backwards;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  animation: fadeIn 1s ease-in 0.3s backwards;
 }
 .watermark-img {
-    width: 240px;
-    height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    animation: fadeIn 1s ease-in 0.5s backwards;
+  width: 240px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  animation: fadeIn 1s ease-in 0.5s backwards;
 }
-
 .watermark-img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2) drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
-}
-  
-  .soundcloud-stack {
-  list-style-position: inside;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  padding: 0 20px;
-  margin: 40px auto;
-  max-width: 100%;
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
 }
 
-.soundcloud-stack li {
-  width: 100%;
-  max-width: 640px;
+/* SoundCloud Stack */
+.soundcloud-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 60px auto;
+  gap: 40px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.soundcloud-stack > div {
+  padding: 0 20px;
+  width: 100%;
 }
 
 .soundcloud-stack iframe {
   width: 100%;
-  height: 300px; /* Updated to match new embed size */
+  height: 300px;
   border: none;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
-  
-  /* Responsive Behavior */
-  @media (max-width: 768px) {
-    .soundcloud-stack {
-      padding: 0 10px;
-      gap: 50px;
-    }
-  
-    .soundcloud-stack iframe {
-      height: 80px;
-    }
-  
-    .watermark {
-        padding: 5px;
-    }
 
-    .watermark-img {
-        width: 150px;
-    }
+/* Responsive */
+@media (max-width: 768px) {
+  .soundcloud-stack {
+    padding: 0 10px;
+    gap: 30px;
   }
-  
-  @media (max-width: 480px) {
-    .soundcloud-stack {
-      padding: 0 5px;
-      gap: 60px;
-    }
-  
-    .soundcloud-stack iframe {
-      height: 90px;
-    }
-  
-    .watermark {
-        padding: 3px;
-    }
 
-    .watermark-img {
-        width: 140px;
-    }
+  .watermark {
+    padding: 5px;
   }
+
+  .watermark-img {
+    width: 150px;
+  }
+
+  .soundcloud-stack iframe {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .soundcloud-stack > div {
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .soundcloud-stack iframe {
+    height: 200px;
+  }
+
+  .watermark {
+    padding: 3px;
+  }
+
+  .watermark-img {
+    width: 140px;
+  }
+}
