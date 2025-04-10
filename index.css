@@ -56,7 +56,10 @@
     border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
-
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
