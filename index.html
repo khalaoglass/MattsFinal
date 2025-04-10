@@ -41,6 +41,28 @@
     
    
     <script>
+        if (navigator.userAgent.includes("Instagram")) {
+  const prompt = document.createElement("div");
+  prompt.innerHTML = `
+    <div style="
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      z-index: 9999;
+      text-align: center;
+    ">
+      For the full experience, <b>open this page in your browser</b><br />
+      Tap <b>•••</b> at the top → <b>Open in Browser</b>
+    </div>
+  `;
+  document.body.appendChild(prompt);
+}
         document.addEventListener("DOMContentLoaded", () => {
             const introImg = document.getElementById("intro-img");
             if (introImg) introImg.style.display = "block";
